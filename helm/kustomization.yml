@@ -1,0 +1,9 @@
+ resources:
+ - certs/default-tls-secret.yaml
+
+ helmCharts:
+ - name: grafana
+   repo: https://grafana.github.io/helm-charts 
+   version: 6.32.14 
+   releaseName: grafana
+   namespace: default
