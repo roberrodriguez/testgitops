@@ -15,14 +15,31 @@ spec:
       maxUnavailable: 25%
     type: RollingUpdate
   revisionHistoryLimit: 3
-  progressDeadlineSeconds: 30 
   template:
     metadata:
       labels:
         app: apptest
     spec:
       containers:
-      - startupProbe:
+      - readinessProbe:
+          initialDelaySeconds: 15
+          periodSeconds: 5
+          failureThreshold: 3
+          successThreshold: 1
+          timeoutSeconds: 2
+          httpGet:
+            path:  /test.html
+            port: 80
+        livenessProbe:
+          initialDelaySeconds: 15
+          periodSeconds: 5
+          failureThreshold: 3
+          successThreshold: 1
+          timeoutSeconds: 2
+          httpGet:
+            path: /test.html
+            port: 80
+        startupProbe:
           initialDelaySeconds: 10
           periodSeconds: 10
           failureThreshold: 15
