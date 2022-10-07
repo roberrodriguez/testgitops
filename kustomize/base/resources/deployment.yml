@@ -15,6 +15,7 @@ spec:
       maxUnavailable: 25%
     type: RollingUpdate
   revisionHistoryLimit: 3
+  progressDeadlineSeconds: 30 
   template:
     metadata:
       labels:
