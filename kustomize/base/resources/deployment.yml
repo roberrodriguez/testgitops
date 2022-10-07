@@ -22,25 +22,7 @@ spec:
         app: apptest
     spec:
       containers:
-      - readinessProbe:
-          initialDelaySeconds: 15
-          periodSeconds: 5
-          failureThreshold: 3
-          successThreshold: 1
-          timeoutSeconds: 2
-          httpGet:
-            path:  /test.html
-            port: 80
-        livenessProbe:
-          initialDelaySeconds: 15
-          periodSeconds: 5
-          failureThreshold: 3
-          successThreshold: 1
-          timeoutSeconds: 2
-          httpGet:
-            path: /test.html
-            port: 80
-        startupProbe:
+      - startupProbe:
           initialDelaySeconds: 10
           periodSeconds: 10
           failureThreshold: 15
