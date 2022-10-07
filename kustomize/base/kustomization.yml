@@ -3,3 +3,4 @@ kind: Kustomization
 
 resources:
 - ./resources/secret-test.yaml
+- ./resources/deployment.yml
