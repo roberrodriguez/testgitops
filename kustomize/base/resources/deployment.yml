@@ -14,7 +14,7 @@ spec:
       maxSurge: 25%
       maxUnavailable: 25%
     type: RollingUpdate
-  revisionHistoryLimit: 3
+  revisionHistoryLimit: 4
   progressDeadlineSeconds: 30 
   template:
     metadata:
